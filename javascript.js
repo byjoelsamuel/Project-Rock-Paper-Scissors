@@ -64,6 +64,6 @@ function handleClick(humanSelection) {
     checkForGameWinner();
 }
 
-document.getElementById("rockButton").addEventListener("click", () => handleClick(rock));
-document.getElementById("paperButton").addEventListener("click", () => handleClick(paper));
-document.getElementById("scissorsButton").addEventListener("click", () => handleClick(scissors));
+document.getElementById("rock").addEventListener("click", () => handleClick(rock));
+document.getElementById("paper").addEventListener("click", () => handleClick(paper));
+document.getElementById("scissors").addEventListener("click", () => handleClick(scissors));
