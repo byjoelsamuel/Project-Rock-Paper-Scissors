@@ -1,3 +1,11 @@
+const resultDiv = document.getElementById("result");
+const scoreDiv = document.getElementById("score");
+
+let humanScore = 0;
+let computerScore = 0;
+let gameOver = false;
+
+
 function getComputerChoice(choices) {
     return choices[Math.floor(Math.random() * choices.length)]; // Function that generates random choices
 }
@@ -27,9 +35,12 @@ function playRound(humanChoice, computerChoice) { // Function that plays the gam
         return "human";
     }
 
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}`); // sub-function that displays loss when score is lower :(
-    return "computer";
 }
+
+
+resultDiv.textContent = `You win! ${humanChoice} beats ${computerChoice}`;
+resultDiv.textContent = `It's a tie! ${humanChoice} is the same as ${computerChoice}`;
+resultDiv.textContent = `You have lost! ${computerChoice} beats ${humanChoice}`;
 
 function playGame() {
     let humanScore = 0;
