@@ -1,9 +1,9 @@
 function getComputerChoice(choices) {
-    return choices[Math.floor(Math.random() * choices.length)]; // generates random choices to choose
+    return choices[Math.floor(Math.random() * choices.length)]; // Function that generates random choices
 }
 
 function getHumanChoice() {
-    return prompt("Rock, Paper, or Scissors?"); // asks the user what they want to input
+    return prompt("Rock, Paper, or Scissors?"); // Function that asks for input
 }
 
 const rock = "Rock";
@@ -12,7 +12,7 @@ const scissors = "Scissors";
 
 const signButton = document.getElementById("signButton");
 
-function playRound(humanChoice, computerChoice) { // this is the user's round, define what input beats other input.
+function playRound(humanChoice, computerChoice) { // Function that plays the game, combining both user and computer's input
     const human = humanChoice.toLowerCase();
     const computer = computerChoice.toLowerCase();
     const beats = { rock: "scissors", paper: "rock", scissors: "paper" };
@@ -23,11 +23,11 @@ function playRound(humanChoice, computerChoice) { // this is the user's round, d
     }
 
     if (beats[human] === computer) {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}`); // add a Winner Screen for beating computer.
+        console.log(`You win! ${humanChoice} beats ${computerChoice}`); // sub-function that displays human winner message if score is higher.
         return "human";
     }
 
-    console.log(`You lose! ${computerChoice} beats ${humanChoice}`); // add a Losing Screen for being beaten. :(
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}`); // sub-function that displays loss when score is lower :(
     return "computer";
 }
 
@@ -36,7 +36,7 @@ function playGame() {
     let computerScore = 0;
     const choices = [rock, paper, scissors];
 
-    for (let round = 0; round < 5; round++) { // best of 5 rounds
+    for (let round = 0; round < 5; round++) { // function that tracks the score between user and computer
         const humanSelection = getHumanChoice();
         const computerSelection = getComputerChoice(choices);
         const winner = playRound(humanSelection, computerSelection);
@@ -45,7 +45,7 @@ function playGame() {
         else if (winner === "computer") computerScore++;
     }
 
-    if (humanScore > computerScore) { // add end title declaring what happened.
+    if (humanScore > computerScore) { // sub function that determines who won the game
         console.log(`You win the game! ${humanScore} to ${computerScore}`);
     } else if (computerScore > humanScore) {
         console.log(`You lose the game! ${computerScore} to ${humanScore}`);
@@ -54,4 +54,4 @@ function playGame() {
     }
 }
 
-signButton.addEventListener("click", playGame); // Add button for playing game.
+signButton.addEventListener("click", playGame); // Button that allows users to play game.
