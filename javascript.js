@@ -55,3 +55,7 @@ function playGame() {
 }
 
 signButton.addEventListener("click", playGame); // Button that allows users to play game.
+
+document.getElementById("rock").addEventListener("click", () => handleClick(rock));
+document.getElementById("paper").addEventListener("click", () => handleClick(paper));
+document.getElementById("Scissors").addEventListener("click", () => handleClick(scissors));
